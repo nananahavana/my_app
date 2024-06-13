@@ -11,14 +11,13 @@
 </div>
 <small>Keyword: <%= params[:keyword] %></small>
 <ul>
-    <%- for article in @articles do %>
+<%- for article in @articles do%>
     <li>
         <strong><%= link_to article.title, read_path(article_id: article.id) %></strong>
         
-        <small>
-        Oleh <%= article.user.full_name %>    
-        pada <%= article.created_at.to_s(:short) %>            
-        </small>
+        <small>Oleh <%= article.user.full_name %></small>
+        <small>pada <%= article.created_at.to_s(:short) %></small>
+        
     </li>
     <%- end %>
 </ul>
